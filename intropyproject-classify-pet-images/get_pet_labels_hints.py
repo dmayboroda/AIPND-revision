@@ -20,6 +20,7 @@
 # Imports python modules
 from os import listdir
 
+
 # TODO 2: EDIT and ADD code BELOW to do the following that's stated in the 
 #       comments below that start with "TODO: 2" for the get_pet_labels function 
 #       Please be certain to replace None in the return statement with 
@@ -68,7 +69,9 @@ def get_pet_labels(image_dir):
            #          accessed by in_files[idx]. Be certain to place the 
            #          extracted dog breed name in the variable pet_label 
            #          that's created as an empty string ABOVE
-           pass
+           pet_label = in_files[idx].replace(".jpg", '').lower()
+           last_index = pet_label.rfind("_")
+           pet_label = pet_label[:last_index].replace("_", " ")
 
            # If filename doesn't already exist in dictionary add it and it's
            # pet label - otherwise print an error message because indicates 
@@ -82,4 +85,4 @@ def get_pet_labels(image_dir):
  
     # TODO 2b. Replace None with the results_dic dictionary that you created
     # with this function
-    return None
+    return results_dic

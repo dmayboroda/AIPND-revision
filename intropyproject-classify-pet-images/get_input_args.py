@@ -46,14 +46,14 @@ def get_input_args():
                                                                    "dog names file")
     parser.error = parser_error
     parser._optionals.title = "OPTIONS"
-    parser.add_argument('-dir', help="dogs images dir", required=True, default='pet_images')
-    parser.add_argument('-arch', help="CNN architecture", required=True, default='vgg')
-    parser.add_argument('-dogfile', help='Text file with dog names', required=True, default='dognames.txt')
+    parser.add_argument('--dir', type=str, help="Dogs images dir", required=True, default='pet_images/')
+    parser.add_argument('--arch', type=str, help="CNN architecture", required=True, default='vgg')
+    parser.add_argument('--dogfile', type=str, help='Text file with dog names', required=True, default='dognames.txt')
 
     return parser.parse_args()
 
 
 def parser_error(errmsg):
-    print("Use -h for help")
     print("Error: " + errmsg)
+    print("Use -h for help")
     sys.exit()
