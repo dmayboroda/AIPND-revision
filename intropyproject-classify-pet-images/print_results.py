@@ -26,6 +26,8 @@
 #         This function does not output anything other than printing a summary
 #         of the final results.
 ##
+
+
 # TODO 6: Define print_results function below, specifically replace the None
 #       below by the function definition of the print_results function. 
 #       Notice that this function doesn't to return anything because it  
