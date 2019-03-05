@@ -79,8 +79,11 @@ def print_results(results_dic, results_stats_dic, model,
         print("\nINCORRECT Dog/NOT Dog Assignments:")
 
         for key in results_dic:
-            if sum(results_dic[key][3:]) == 2 and results_dic[key][4] == 0:
-                print("Real: {}   Classifier: {}".format(results_dic[key][0], results_dic[key][1]))
+            if results_dic[key][3] != results_dic[key][4]:
+                if results_dic[key][3] == 1:
+                    print("Pet images: {} label is a Dog - Classified as NOT-A-DOG".format(results_dic[key][1]))
+                else:
+                    print("Pet images: {} label is NOT-a-Dog - Classified as a-DOG".format(results_dic[key][1]))
 
     if (print_incorrect_breed and
             (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed'])):

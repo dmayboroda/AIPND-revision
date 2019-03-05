@@ -106,7 +106,6 @@ def print_results(results_dic, results_stats_dic, model,
 
         # process through results dict, printing incorrectly classified dogs
         for key in results_dic:
-
             # TODO: 6c. REPLACE pass with CODE that prints out the pet label 
             #           and the classifier label from results_dic dictionary    
             #           ONLY when the classifier function (classifier label) 
@@ -125,9 +124,11 @@ def print_results(results_dic, results_stats_dic, model,
             #
             # Pet Image Label is a Dog - Classified as NOT-A-DOG -OR- 
             # Pet Image Label is NOT-a-Dog - Classified as a-DOG
-            for key in results_dic:
-                if results_dic[key][3] == 1 and results_dic[key][4] == 0:
-                    print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0], results_dic[key][1]))
+            if results_dic[key][3] != results_dic[key][4]:
+                if results_dic[key][3] == 1:
+                    print("Pet Image {} Label is a Dog - Classified as NOT-A-DOG".format(results_dic[key][1]))
+                else:
+                    print("Pet Image {} Label is NOT-a-Dog - Classified as a-DOG".format(results_dic[key][1]))
 
     # IF print_incorrect_breed == True AND there were dogs whose breeds 
     # were incorrectly classified - print out these cases                    
