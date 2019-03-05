@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/print_results_hints.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:
+# PROGRAMMER: David Mayboroda
+# DATE CREATED: 03/05/2019
 # REVISED DATE: 
 # PURPOSE: This is a *hints* file to help guide students in creating the 
 #          function print_results that prints the results statistics from the
@@ -27,6 +27,8 @@
 #         This function does not output anything other than printing a summary
 #         of the final results.
 ##
+
+
 # TODO 6: EDIT and ADD code BELOW to do the following that's stated in the 
 #       comments below that start with "TODO: 6" for the print_results function.
 #       Specifically edit and add code below within the the print_results function. 
@@ -75,7 +77,7 @@ def print_results(results_dic, results_stats_dic, model,
     #          that's accessed by key 'n_notdogs_img' using dictionary 
     #          results_stats_dic
     #
-    print("")
+    print("{:20}: {:3d}".format('N Not-Dog Images', results_stats_dic['n_notdogs_img']))
 
 
     # Prints summary statistics (percentages) on Model Run
@@ -90,7 +92,8 @@ def print_results(results_dic, results_stats_dic, model,
         #           both the key and the value. Remember the value is accessed 
         #           by results_stats_dic[key]
         #
-        pass 
+        if key.startswith('p'):
+            print("{}:{:3d}".format(key, results_stats_dic[key]))
 
 
     # IF print_incorrect_dogs == True AND there were images incorrectly 
@@ -122,7 +125,9 @@ def print_results(results_dic, results_stats_dic, model,
             #
             # Pet Image Label is a Dog - Classified as NOT-A-DOG -OR- 
             # Pet Image Label is NOT-a-Dog - Classified as a-DOG
-            pass
+            for key in results_dic:
+                if results_dic[key][3] == 1 and results_dic[key][4] == 0:
+                    print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0], results_dic[key][1]))
 
     # IF print_incorrect_breed == True AND there were dogs whose breeds 
     # were incorrectly classified - print out these cases                    
