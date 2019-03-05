@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/get_input_args_hints.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                   
+# PROGRAMMER: David Mayboroda
+# DATE CREATED: 03/04/2019
 # REVISED DATE: 
 # PURPOSE: This is a *hints* file to help guide students in creating the 
 #          function that retrieves the following 3 command line inputs from
@@ -18,7 +18,8 @@
 # Imports python modules
 import argparse
 
-# TODO 1: EDIT and ADD code BELOW to do the following that's stated in the 
+
+# TODO 1: EDIT and ADD code BELOW to do the following that's stated in the
 #       comments below that start with "TODO: 1" for the get_input_args function
 #       Please be certain to replace None in the return statement with 
 #       parser.parse_args() parsed argument collection that you created with 
@@ -52,9 +53,9 @@ def get_input_args():
     # TODO: 1a. EDIT parse.add_argument statements BELOW to add type & help for:
     #          --arch - the CNN model architecture
     #          --dogfile - text file of names of dog breeds
-    parser.add_argument('--arch', type=str,  default = 'vgg',
+    parser.add_argument('--arch', type=str, default='vgg',
                         help="CNN model architecture")
-    parser.add_argument('--dogfile', type=str, default = 'dognames.txt',
+    parser.add_argument('--dogfile', type=str, default='dognames.txt',
                         help='text file of names of dog breeds')
 
     # TODO: 1b. Replace None with parser.parse_args() parsed argument 
